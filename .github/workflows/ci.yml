@@ -20,5 +20,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: ${{ matrix.image }}/Dockerfile
-          push: false
-          tags: mautic/mautic:v4-${{ matrix.image }}
+          platforms: linux/arm64
+          push: true
+          tags: ghcr.io/yusufhm/mautic:v4-${{ matrix.image }}
+          labels: org.opencontainers.image.source=https://github.com/yusufhm/docker-mautic
